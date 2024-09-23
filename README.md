@@ -21,3 +21,14 @@ RAG-Sequence: Retrieves documents at the sequence level, which is faster but les
 RAG-End-to-End: Jointly fine-tunes both retrieval and generation for optimal performance.
 RAG-Fusion: Retrieves multiple documents and synthesizes them during generation.
 RAG-Hybrid: Combines dense and sparse retrieval mechanisms for improved document retrieval.
+
+rag-techniques-comparison/
+├── data/                    # Dataset and retrieval documents
+├── models/                  # Implementations of different RAG techniques
+├── notebooks/               # Jupyter notebooks for experiments
+├── evaluation/              # Scripts for evaluating the models
+├── results/                 # Logs, metrics, and plots
+├── requirements.txt         # Dependencies
+├── README.md                # Project overview and instructions
+├── train_rag.py             # Training script for models
+└── evaluate_rag.py          # Evaluation script
