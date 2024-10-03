@@ -36,3 +36,34 @@ preprocessed_captions = preprocess_captions(image_caption_map[sample_image])
 
 # Print the tokenized input for the first caption
 print(f"Tokenized Captions for {sample_image}: {preprocessed_captions[0]['input_ids']}")
+
+
+from PIL import Image
+import os
+import torchvision.transforms as transforms
+
+# Path to the image directory (adjust based on your dataset location)
+image_dir = data_dir + 'images/'
+
+# Define the image preprocessing transformations (resize, normalize)
+image_size = 224  # Standard size for models like CLIP
+transform = transforms.Compose([
+    transforms.Resize((image_size, image_size)),  # Resize image
+    transforms.ToTensor(),  # Convert to PyTorch tensor
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])  # Normalize using ImageNet stats
+])
+
+# Function to preprocess a single image
+def preprocess_image(image_path):
+    # Load the image
+    image = Image.open(image_path).convert('RGB')
+    # Apply the transformations
+    image = transform(image)
+    return image
+
+# Example: Preprocess an image
+sample_image_path = os.path.join(image_dir, '1000092795.jpg')  # Replace with your actual image file
+preprocessed_image = preprocess_image(sample_image_path)
+
+# Print the shape of the preprocessed image
+print(f"Preprocessed Image Shape: {preprocessed_image.shape}")
