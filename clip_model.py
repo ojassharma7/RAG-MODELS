@@ -17,4 +17,3 @@ preprocessed_image = preprocess(image).unsqueeze(0).to(device)
 
 # Print the shape of the preprocessed image
 print(f"Preprocessed Image Shape: {preprocessed_image.shape}")
-
