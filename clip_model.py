@@ -17,3 +17,20 @@ preprocessed_image = preprocess(image).unsqueeze(0).to(device)
 
 # Print the shape of the preprocessed image
 print(f"Preprocessed Image Shape: {preprocessed_image.shape}")
+
+
+# Tokenize a list of captions using CLIP's tokenizer
+captions = ["A group of people on a beach", "Two young men playing football"]  # Example captions
+text_inputs = clip.tokenize(captions).to(device)
+
+# Encode the preprocessed image
+with torch.no_grad():
+    image_features = model.encode_image(preprocessed_image)
+
+# Encode the text (captions)
+with torch.no_grad():
+    text_features = model.encode_text(text_inputs)
+
+# Print the shape of the encoded image and text features
+print(f"Image Features Shape: {image_features.shape}")
+print(f"Text Features Shape: {text_features.shape}")
