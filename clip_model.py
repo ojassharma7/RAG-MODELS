@@ -34,3 +34,17 @@ with torch.no_grad():
 # Print the shape of the encoded image and text features
 print(f"Image Features Shape: {image_features.shape}")
 print(f"Text Features Shape: {text_features.shape}")
+
+
+import torch.nn.functional as F
+
+# Compute cosine similarity between image features and text features
+similarity = F.cosine_similarity(image_features, text_features, dim=-1)
+
+# Print the similarity scores
+print(f"Cosine Similarity Scores: {similarity}")
+
+# Example: Retrieve the caption with the highest similarity to the image
+best_caption_idx = torch.argmax(similarity).item()
+best_caption = captions[best_caption_idx]
+print(f"Best Matching Caption for the Image: {best_caption}")
