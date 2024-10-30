@@ -67,3 +67,4 @@ preprocessed_image = preprocess_image(sample_image_path)
 
 # Print the shape of the preprocessed image
 print(f"Preprocessed Image Shape: {preprocessed_image.shape}")
+``

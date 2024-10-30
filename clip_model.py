@@ -48,3 +48,6 @@ print(f"Cosine Similarity Scores: {similarity}")
 best_caption_idx = torch.argmax(similarity).item()
 best_caption = captions[best_caption_idx]
 print(f"Best Matching Caption for the Image: {best_caption}")
+
+
+    
