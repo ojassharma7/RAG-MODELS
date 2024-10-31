@@ -67,4 +67,6 @@ preprocessed_image = preprocess_image(sample_image_path)
 
 # Print the shape of the preprocessed image
 print(f"Preprocessed Image Shape: {preprocessed_image.shape}")
-``
+
+
+print(" this is the code for the respected clip model which is going to give u a multi modal approach")
