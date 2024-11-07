@@ -8,6 +8,10 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 # Load the CLIP model and its preprocessing pipeline
 model, preprocess = clip.load("ViT-B/32", device=device)
 
+# The line `# Example: Preprocess an image using CLIP's preprocessing pipeline` is a comment in the
+# code that indicates that the following code snippet demonstrates how to preprocess an image using
+# CLIP's preprocessing pipeline. It serves as a descriptive label for the upcoming code block to
+# explain its purpose or functionality.
 # Example: Preprocess an image using CLIP's preprocessing pipeline
 image_path = '/path/to/flickr30k/images/1000092795.jpg'  # Replace with your image path
 image = Image.open(image_path)
